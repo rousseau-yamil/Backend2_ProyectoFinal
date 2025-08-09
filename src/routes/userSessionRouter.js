@@ -36,5 +36,8 @@ router.put('/profile/:id',passport.authenticate('jwt'), perfil_auth('admin'),use
 //CURRENT
 router.get('/current',passport.authenticate('jwt', { session: false }), userController.current
 )
+//logout
+router.post('/logout', userController.logout);
 
 export default router
+
