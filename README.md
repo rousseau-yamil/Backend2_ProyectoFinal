@@ -1,6 +1,4 @@
 ## PROYECTO MERN : Final de Backend 2 
-✨ ##Autor
-Desarrollado por Rousseau Yamil.
 
 WebApp simple construida con el stack MERN. 
 
@@ -122,4 +120,8 @@ Si es necesario utilizar variables de entorno, estas se pueden definir manualmen
 
 El SESSION_SECRET de este proyecto es solo para uso local y no es válido fuera de esta aplicación. Aun así, por buenas prácticas no lo incluyo en el archivo .env."
 
+
+## ✨ Autor
+Desarrollado por Rousseau Yamil. 
+Gracias por visitar este proyecto! 
 
