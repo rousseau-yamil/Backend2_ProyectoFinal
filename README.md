@@ -1,4 +1,4 @@
-PROYECTO MERN : Final de Backend 2
+## PROYECTO MERN : Final de Backend 2
 Es una WebApp de un simple e-commerce construida con el stack MERN. 
 
 Esta aplicacion permite a los usuarios 
@@ -11,7 +11,6 @@ Esta aplicacion permite a los usuarios
 - Arquitectura basada en **DAO, Services, Repositories y Controllers**.
 - **Validaciones y manejo de errores** personalizados.
 
-PRODUCTOS
 ## 🛠️ Tecnologías usadas
 
 ### Backend
@@ -35,34 +34,41 @@ PRODUCTOS
    npm run start
 
    
-🔑 **Endpoints principales (Backend)**
+## Endpoints principales (Backend)**
 
-Auth
-POST 127.0.0.1:8080/api/sessions/register → Registro de usuario 
+## Auth
+```
+**POST 127.0.0.1:8080/api/sessions/register → Registro de usuario 
   ejemplo BODY:Formato JSON 
           {"first_name":"Nombre","last_name":"Apellido","email":"test@client.com","password":"***","role":"user"}  (admin/user)
-
-POST 127.0.0.1:8080/api/sessions/login → Login de usuario
-ejemplo BODY:Formato JSON 
+```
+```
+**POST 127.0.0.1:8080/api/sessions/login → Login de usuario
+   ejemplo BODY:Formato JSON 
           {"email":"user@mail.com","password":"***"}
-
-GET 127.0.0.1:8080/api/sessions/current/ → Perfil del usuario autenticado (DTO)
-
-PUT 127.0.0.1:8080/api/sessions/profile/:uid → Modificacion de usuario (solo admin)
-ejemplo BODY:Formato JSON 
+```
+```
+**GET 127.0.0.1:8080/api/sessions/current/ → Perfil del usuario autenticado (DTO)
+```
+```
+**PUT 127.0.0.1:8080/api/sessions/profile/:uid → Modificacion de usuario (solo admin)
+   ejemplo BODY:Formato JSON 
           {"propiedad":"valor","role":"user"}
-
-POST 127.0.0.1:8080/api/sessions/logout → Logout
-
+```
+```
+**POST 127.0.0.1:8080/api/sessions/logout → Logout
+```
 ++++++++++++++++++++++++++++++++++++++++++++
 
-OPERACIONES CON PRODUCTS
-
-GET /api/products → Listar productos
-
-GET /api/products/:pid → Ver producto por ID
-
-POST 127.0.0.1:8080/api/products/ → Crear producto (Admin)
+##OPERACIONES CON PRODUCTS
+```
+**GET /api/products → Listar productos
+```
+```
+**GET /api/products/:pid → Ver producto por ID
+```
+```
+**POST 127.0.0.1:8080/api/products/ → Crear producto (Admin)
 ejemplo BODY:Formato JSON 
   {
     "title": "Mouse Gamer RGBcopia",
@@ -73,51 +79,46 @@ ejemplo BODY:Formato JSON
     "category": "accesorios",
     "thumbnails": ["mouse1.jpg"]
   }
-
-PUT 127.0.0.1:8080/api/products/:pid → Actualizar producto (Admin)
+```
+```
+**PUT 127.0.0.1:8080/api/products/:pid → Actualizar producto (Admin)
  ejemplo BODY:Formato JSON 
   {
     "stock": 52
   }
-
-DELETE 127.0.0.1:8080/api/products/:pid → Eliminar producto (Admin)
-
+```
+```
+**DELETE 127.0.0.1:8080/api/products/:pid → Eliminar producto (Admin)
+```
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-OPERACIONES DE USUARIOS CON SUS CARRITOS
-Carrito
-GET 127.0.0.1:8080/api/carts/:cid → Obtener carrito por ID
-
-POST /api/carts/:cid/productos/:pid → Agregar producto al carrito
-ejemplo BODY:Formato JSON
+##OPERACIONES DE USUARIOS CON SUS CARRITOS
+```
+**GET 127.0.0.1:8080/api/carts/:cid → Obtener carrito por ID
+```
+```
+**POST /api/carts/:cid/productos/:pid → Agregar producto al carrito
+ ejemplo BODY:Formato JSON
   {
     "quantity": 2
   }
-
-DELETE /api/carts/:id/productos/:pid → Eliminar producto del carrito
-
-POST /api/carts/:cid/checkout → Finalizar compra y generar ticket
-
+```
+```
+**DELETE /api/carts/:id/productos/:pid → Eliminar producto del carrito
+```
+```
+**POST /api/carts/:cid/checkout → Finalizar compra y generar ticket
+```
 +++++++++++++++++++++++++++++++++
 
-📂 Estructura del proyecto
+⚠️ ##Sobre el archivo .env
+El archivo .env no está incluido en esta entrega porque no es necesario para ejecutar el proyecto.
+Toda la información y configuraciones necesarias para correr la aplicación ya están definidas en los archivos de configuración incluidos en el repositorio.
+En entregas anteriores, compartir el .env generó inconvenientes, por eso esta vez opto por seguir las buenas prácticas y no incluir archivos ocultos con datos sensibles.
+Si es necesario utilizar variables de entorno, estas se pueden definir manualmente siguiendo la estructura del archivo de configuración provisto en el proyecto.
 
-├── src/
- │    ├── configuracion/
- │    ├── controller/
- │    ├── dao/
- │    ├── data/
- │    ├── dto/
- │    ├── middleware/
- │    ├── public/
- │    ├── repository/
- │    ├── routes/
- │    ├── services/
- │    ├── utils/
- │    ├── views/
- │    └── app.js
- │    └── websocket.js
- ├── package.json
+El SESSION_SECRET de este proyecto es solo para uso local y no es válido fuera de esta aplicación. Aun así, por buenas prácticas no lo incluyo en el archivo .env."
+
 
 ✨ Autor
 Desarrollado por Rousseau Yamil.
