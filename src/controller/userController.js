@@ -146,6 +146,20 @@ async register(req, res) {
 
         }
     }
+    async logout(req, res) {
+    try {
+        res.clearCookie('cookieToken', {
+            httpOnly: true,
+            signed: true,
+            sameSite: 'strict'
+        });
+
+        res.status(200).json({ message: 'Logout exitoso' });
+    } catch (error) {
+        res.status(500).json({ error: 'Error al cerrar sesión' });
+    }
+}
 }
 
 export default new UserController()
+
